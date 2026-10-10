@@ -1,0 +1,24 @@
+
+<resources>
+    <string name="app_name">Student Information</string>
+    <string name="screen_title">Teknologi Informasi</string>
+    <string name="university_name">Universitas Muhammadiyah Yogyakarta</string>
+
+    <string name="student1_name">Bambang Sumantri</string>
+    <string name="student1_phone">-</string>
+    <string name="student1_address">Turi, Sleman</string>
+
+    <string name="student2_name">Mohammed Mansoor</string>
+    <string name="student2_phone">085725725471</string>
+    <string name="student2_address">Kasihan, Bantul</string>
+
+    <string name="student3_name">Mohammed Ilyas</string>
+    <string name="student3_phone">085436874190</string>
+    <string name="student3_address">Depok, Sleman</string>
+
+    <string name="student4_name">Sazad</string>
+    <string name="student4_phone">085436874190</string>
+    <string name="student4_address">Gamping, Sleman</string>
+
+    <string name="umy_logo_description">Logo Universitas Muhammadiyah Yogyakarta</string>
+</resources>
