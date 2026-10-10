@@ -27,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -51,47 +52,57 @@ class MainActivity : ComponentActivity() {
 
 private data class Student(
     val nameRes: Int,
-    val phoneRes: Int,
+    val phoneRes: Int?,
     val addressRes: Int,
     val backgroundRes: Int,
     val nameColorRes: Int,
-    val detailsColorRes: Int
+    val phoneColorRes: Int,
+    val addressColorRes: Int,
+    val isNameItalic: Boolean = false
 )
 
 @Composable
 private fun StudentScreen() {
     val students = listOf(
         Student(
-            R.string.student1_name,
-            R.string.student1_phone,
-            R.string.student1_address,
-            R.color.student_gray,
-            R.color.student_details_yellow,
-            R.color.student_details_yellow
+            nameRes = R.string.student1_name,
+            phoneRes = null,
+            addressRes = R.string.student1_address,
+            backgroundRes = R.color.student_gray,
+            nameColorRes = R.color.student_name_white,
+            phoneColorRes = R.color.student_name_white,
+            addressColorRes = R.color.student_details_yellow,
+            isNameItalic = true
         ),
         Student(
-            R.string.student2_name,
-            R.string.student2_phone,
-            R.string.student2_address,
-            R.color.student_purple,
-            R.color.student_name_white,
-            R.color.student_details_white
+            nameRes = R.string.student2_name,
+            phoneRes = R.string.student2_phone,
+            addressRes = R.string.student2_address,
+            backgroundRes = R.color.student_purple,
+            nameColorRes = R.color.student_name_white,
+            phoneColorRes = R.color.student_details_cyan,
+            addressColorRes = R.color.student_details_yellow,
+            isNameItalic = false
         ),
         Student(
-            R.string.student3_name,
-            R.string.student3_phone,
-            R.string.student3_address,
-            R.color.student_blue,
-            R.color.student_name_white,
-            R.color.student_details_white
+            nameRes = R.string.student3_name,
+            phoneRes = R.string.student3_phone,
+            addressRes = R.string.student3_address,
+            backgroundRes = R.color.student_blue,
+            nameColorRes = R.color.student_name_white,
+            phoneColorRes = R.color.student_details_cyan,
+            addressColorRes = R.color.student_details_white,
+            isNameItalic = false
         ),
         Student(
-            R.string.student4_name,
-            R.string.student4_phone,
-            R.string.student4_address,
-            R.color.student_green,
-            R.color.student_name_white,
-            R.color.student_details_white
+            nameRes = R.string.student4_name,
+            phoneRes = R.string.student4_phone,
+            addressRes = R.string.student4_address,
+            backgroundRes = R.color.student_green,
+            nameColorRes = R.color.student_name_white,
+            phoneColorRes = R.color.student_details_cyan,
+            addressColorRes = R.color.student_details_white,
+            isNameItalic = false
         )
     )
 
@@ -161,20 +172,23 @@ private fun StudentCard(student: Student) {
                 Text(
                     text = stringResource(student.nameRes),
                     fontSize = 15.sp,
-                    fontWeight = FontWeight.Bold,
+                    fontWeight = if (student.isNameItalic) FontWeight.Normal else FontWeight.Bold,
+                    fontStyle = if (student.isNameItalic) FontStyle.Italic else FontStyle.Normal,
                     color = colorResource(student.nameColorRes)
                 )
 
-                Text(
-                    text = stringResource(student.phoneRes),
-                    fontSize = 11.sp,
-                    color = colorResource(student.detailsColorRes)
-                )
+                if (student.phoneRes != null) {
+                    Text(
+                        text = stringResource(student.phoneRes),
+                        fontSize = 11.sp,
+                        color = colorResource(student.phoneColorRes)
+                    )
+                }
 
                 Text(
                     text = stringResource(student.addressRes),
                     fontSize = 11.sp,
-                    color = colorResource(student.detailsColorRes)
+                    color = colorResource(student.addressColorRes)
                 )
             }
 
@@ -183,7 +197,7 @@ private fun StudentCard(student: Student) {
                 contentDescription = stringResource(
                     R.string.umy_logo_description
                 ),
-                modifier = Modifier.size(48.dp)
+                modifier = Modifier.size(64.dp)
             )
         }
     }

@@ -1,22 +1,21 @@
-
 <resources>
     <string name="app_name">Student Information</string>
     <string name="screen_title">Teknologi Informasi</string>
     <string name="university_name">Universitas Muhammadiyah Yogyakarta</string>
 
-    <string name="student1_name">Mohammed Mansoor Abdullah  </string>
-    <string name="student1_phone">85725725471</string>
-    <string name="student1_address">Taiz, Yemen</string>
+    <string name="student1_name">Mohammed Mansoor </string>
+    <string name="student1_phone">085725725471</string>
+    <string name="student1_address">Tiaz, Yemen</string>
 
-    <string name="student2_name">Mohammed Ramiez</string>
-    <string name="student2_phone">085725725471</string>
+    <string name="student2_name">Mohammed ILyas</string>
+    <string name="student2_phone">085436874190</string>
     <string name="student2_address">Kasihan, Bantul</string>
 
-    <string name="student3_name">Mohammed Ilyas</string>
+    <string name="student3_name">Sazad Husin</string>
     <string name="student3_phone">085436874190</string>
     <string name="student3_address">Depok, Sleman</string>
 
-    <string name="student4_name">Sazaad husin</string>
+    <string name="student4_name">Nima Tareq</string>
     <string name="student4_phone">085436874190</string>
     <string name="student4_address">Gamping, Sleman</string>
 
