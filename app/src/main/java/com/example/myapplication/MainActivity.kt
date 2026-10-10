@@ -151,7 +151,24 @@ private fun StudentCard(student: Student) {
                     .padding(horizontal = 10.dp),
                 verticalArrangement = Arrangement.Center
             ) {
-                // Step 8: Left logo and details column container
+                Text(
+                    text = stringResource(student.nameRes),
+                    fontSize = 15.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = colorResource(student.nameColorRes)
+                )
+
+                Text(
+                    text = stringResource(student.phoneRes),
+                    fontSize = 11.sp,
+                    color = colorResource(student.detailsColorRes)
+                )
+
+                Text(
+                    text = stringResource(student.addressRes),
+                    fontSize = 11.sp,
+                    color = colorResource(student.detailsColorRes)
+                )
             }
         }
     }
