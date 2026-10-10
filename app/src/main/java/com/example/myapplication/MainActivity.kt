@@ -49,6 +49,41 @@ private data class Student(
 
 @Composable
 private fun StudentScreen() {
+    val students = listOf(
+        Student(
+            R.string.student1_name,
+            R.string.student1_phone,
+            R.string.student1_address,
+            R.color.student_gray,
+            R.color.student_details_yellow,
+            R.color.student_details_yellow
+        ),
+        Student(
+            R.string.student2_name,
+            R.string.student2_phone,
+            R.string.student2_address,
+            R.color.student_purple,
+            R.color.student_name_white,
+            R.color.student_details_white
+        ),
+        Student(
+            R.string.student3_name,
+            R.string.student3_phone,
+            R.string.student3_address,
+            R.color.student_blue,
+            R.color.student_name_white,
+            R.color.student_details_white
+        ),
+        Student(
+            R.string.student4_name,
+            R.string.student4_phone,
+            R.string.student4_address,
+            R.color.student_green,
+            R.color.student_name_white,
+            R.color.student_details_white
+        )
+    )
+
     Column(
         modifier = Modifier
             .fillMaxSize()
