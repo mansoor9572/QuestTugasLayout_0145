@@ -19,9 +19,18 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = colorResource(R.color.screen_background)
                 ) {
-                    // Step 1: Base activity setup with background color
+                    // Step 2: Added Student data class
                 }
             }
         }
     }
 }
+
+private data class Student(
+    val nameRes: Int,
+    val phoneRes: Int,
+    val addressRes: Int,
+    val backgroundRes: Int,
+    val nameColorRes: Int,
+    val detailsColorRes: Int
+)
