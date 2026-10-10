@@ -109,3 +109,8 @@ private fun StudentScreen() {
         Spacer(modifier = Modifier.height(18.dp))
     }
 }
+
+@Composable
+private fun StudentCard(student: Student) {
+    // Step 6: StudentCard skeleton
+}
