@@ -4,7 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -116,6 +118,11 @@ private fun StudentScreen() {
         )
 
         Spacer(modifier = Modifier.height(18.dp))
+
+        students.forEach { student ->
+            StudentCard(student = student)
+            Spacer(modifier = Modifier.height(8.dp))
+        }
     }
 }
 
@@ -170,6 +177,14 @@ private fun StudentCard(student: Student) {
                     color = colorResource(student.detailsColorRes)
                 )
             }
+
+            Image(
+                painter = painterResource(R.drawable.logo_umy),
+                contentDescription = stringResource(
+                    R.string.umy_logo_description
+                ),
+                modifier = Modifier.size(48.dp)
+            )
         }
     }
 }
